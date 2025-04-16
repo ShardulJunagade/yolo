@@ -1,3 +1,7 @@
+models/
+yolo11m-obb.pt
+yolo11n.pt
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
