@@ -9,7 +9,7 @@ model = YOLO("yolo11m-obb.pt")  # Load pre-trained model
 
 # Train the model with custom parameters
 results = model.train(
-    data="/home/shardul.junagade/my-work/domain-adaptation-brick-kilns/yolo/haryana_to_test_bihar.yaml",  # Path to the dataset YAML file
+    data="/home/shardul.junagade/my-work/domain-adaptation-brick-kilns/yolo/yamls/haryana_to_test_bihar.yaml",  # Path to the dataset YAML file
     epochs=100,
     imgsz=2560,
     batch=8,
@@ -26,5 +26,4 @@ results = model.train(
 # export CUDA_VISIBLE_DEVICES=0
 # echo "CUDA_VISIBLE_DEVICES=$CUDA_VISIBLE_DEVICES"
 # cd yolo
-# nohup python ./yolo_train.py > ./logs/bihar_to_bihar.log 2>&1 &
-# nohup python ./yolo_train.py > ./logs/haryana_to_bihar.log 2>&1 &
+# nohup python ./yolo_train.py > ./logs/haryana_to_test_bihar.log 2>&1 &

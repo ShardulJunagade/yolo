@@ -1,4 +1,5 @@
 models/
+models_noval/
 yolo11m-obb.pt
 yolo11n.pt
 
