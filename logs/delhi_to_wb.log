@@ -1,0 +1,146 @@
+nohup: ignoring input
+Using device: cuda
+New https://pypi.org/project/ultralytics/8.3.109 available 😃 Update with 'pip install -U ultralytics'
+[34m[1mengine/trainer: [0mtask=obb, mode=train, model=yolo11m-obb.pt, data=/home/shardul.junagade/my-work/domain-adaptation-brick-kilns/yolo/haryana_to_test_bihar.yaml, epochs=100, time=None, patience=100, batch=8, imgsz=2560, save=True, save_period=-1, cache=False, device=cuda, workers=8, project=models, name=yolo11m-obb-bihar-to-haryana6, exist_ok=False, pretrained=True, optimizer=auto, verbose=True, seed=0, deterministic=True, single_cls=False, rect=False, cos_lr=False, close_mosaic=10, resume=False, amp=True, fraction=1.0, profile=False, freeze=None, multi_scale=False, overlap_mask=True, mask_ratio=4, dropout=0.0, val=True, split=val, save_json=False, conf=0.001, iou=0.33, max_det=300, half=False, dnn=False, plots=True, source=None, vid_stride=1, stream_buffer=False, visualize=False, augment=False, agnostic_nms=False, classes=None, retina_masks=False, embed=None, show=False, save_frames=False, save_txt=False, save_conf=False, save_crop=False, show_labels=True, show_conf=True, show_boxes=True, line_width=None, format=torchscript, keras=False, optimize=False, int8=False, dynamic=False, simplify=True, opset=None, workspace=None, nms=False, lr0=0.01, lrf=0.01, momentum=0.937, weight_decay=0.0005, warmup_epochs=3.0, warmup_momentum=0.8, warmup_bias_lr=0.1, box=7.5, cls=0.5, dfl=1.5, pose=12.0, kobj=1.0, nbs=64, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, degrees=0.0, translate=0.1, scale=0.5, shear=0.0, perspective=0.0, flipud=0.0, fliplr=0.5, bgr=0.0, mosaic=1.0, mixup=0.0, copy_paste=0.0, copy_paste_mode=flip, auto_augment=randaugment, erasing=0.4, crop_fraction=1.0, cfg=None, tracker=botsort.yaml, save_dir=models/yolo11m-obb-bihar-to-haryana6
+Overriding model.yaml nc=80 with nc=3
+
+                   from  n    params  module                                       arguments                     
+  0                  -1  1      1856  ultralytics.nn.modules.conv.Conv             [3, 64, 3, 2]                 
+  1                  -1  1     73984  ultralytics.nn.modules.conv.Conv             [64, 128, 3, 2]               
+  2                  -1  1    111872  ultralytics.nn.modules.block.C3k2            [128, 256, 1, True, 0.25]     
+  3                  -1  1    590336  ultralytics.nn.modules.conv.Conv             [256, 256, 3, 2]              
+  4                  -1  1    444928  ultralytics.nn.modules.block.C3k2            [256, 512, 1, True, 0.25]     
+  5                  -1  1   2360320  ultralytics.nn.modules.conv.Conv             [512, 512, 3, 2]              
+  6                  -1  1   1380352  ultralytics.nn.modules.block.C3k2            [512, 512, 1, True]           
+  7                  -1  1   2360320  ultralytics.nn.modules.conv.Conv             [512, 512, 3, 2]              
+  8                  -1  1   1380352  ultralytics.nn.modules.block.C3k2            [512, 512, 1, True]           
+  9                  -1  1    656896  ultralytics.nn.modules.block.SPPF            [512, 512, 5]                 
+ 10                  -1  1    990976  ultralytics.nn.modules.block.C2PSA           [512, 512, 1]                 
+ 11                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 12             [-1, 6]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 13                  -1  1   1642496  ultralytics.nn.modules.block.C3k2            [1024, 512, 1, True]          
+ 14                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+ 15             [-1, 4]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 16                  -1  1    542720  ultralytics.nn.modules.block.C3k2            [1024, 256, 1, True]          
+ 17                  -1  1    590336  ultralytics.nn.modules.conv.Conv             [256, 256, 3, 2]              
+ 18            [-1, 13]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 19                  -1  1   1511424  ultralytics.nn.modules.block.C3k2            [768, 512, 1, True]           
+ 20                  -1  1   2360320  ultralytics.nn.modules.conv.Conv             [512, 512, 3, 2]              
+ 21            [-1, 10]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+ 22                  -1  1   1642496  ultralytics.nn.modules.block.C3k2            [1024, 512, 1, True]          
+ 23        [16, 19, 22]  1   2262172  ultralytics.nn.modules.head.OBB              [3, 1, [256, 512, 512]]       
+YOLO11m-obb summary: 246 layers, 20,904,156 parameters, 20,904,140 gradients, 71.9 GFLOPs
+
+Transferred 685/691 items from pretrained weights
+[34m[1mTensorBoard: [0mStart with 'tensorboard --logdir models/yolo11m-obb-bihar-to-haryana6', view at http://localhost:6006/
+Freezing layer 'model.23.dfl.conv.weight'
+[34m[1mAMP: [0mrunning Automatic Mixed Precision (AMP) checks...
+[34m[1mAMP: [0mchecks passed ✅
+[34m[1mtrain: [0mScanning /home/shardul.junagade/my-work/domain-adaptation-brick-kilns/data/thera_rdn_pro/haryana_4x/labels.cache... 586 images, 0 backgrounds, 0 corrupt: 100%|██████████| 586/586 [00:00<?, ?it/s][34m[1mtrain: [0mScanning /home/shardul.junagade/my-work/domain-adaptation-brick-kilns/data/thera_rdn_pro/haryana_4x/labels.cache... 586 images, 0 backgrounds, 0 corrupt: 100%|██████████| 586/586 [00:00<?, ?it/s]
+/home/shardul.junagade/.conda/envs/shardul_env/lib/python3.12/site-packages/albumentations/__init__.py:28: UserWarning: A new version of Albumentations is available: '2.0.5' (you have '2.0.1'). Upgrade using: pip install -U albumentations. To disable automatic update checks, set the environment variable NO_ALBUMENTATIONS_UPDATE to 1.
+  check_for_updates()
+[34m[1malbumentations: [0mBlur(p=0.01, blur_limit=(3, 7)), MedianBlur(p=0.01, blur_limit=(3, 7)), ToGray(p=0.01, num_output_channels=3, method='weighted_average'), CLAHE(p=0.01, clip_limit=(1.0, 4.0), tile_grid_size=(8, 8))
+[34m[1mval: [0mScanning /home/shardul.junagade/my-work/domain-adaptation-brick-kilns/data/thera_rdn_pro/bihar_4x/labels.cache... 641 images, 0 backgrounds, 0 corrupt: 100%|██████████| 641/641 [00:00<?, ?it/s][34m[1mval: [0mScanning /home/shardul.junagade/my-work/domain-adaptation-brick-kilns/data/thera_rdn_pro/bihar_4x/labels.cache... 641 images, 0 backgrounds, 0 corrupt: 100%|██████████| 641/641 [00:00<?, ?it/s]
+Plotting labels to models/yolo11m-obb-bihar-to-haryana6/labels.jpg... 
+[34m[1moptimizer:[0m 'optimizer=auto' found, ignoring 'lr0=0.01' and 'momentum=0.937' and determining best 'optimizer', 'lr0' and 'momentum' automatically... 
+[34m[1moptimizer:[0m AdamW(lr=0.001429, momentum=0.9) with parameter groups 112 weight(decay=0.0), 122 weight(decay=0.0005), 121 bias(decay=0.0)
+[34m[1mTensorBoard: [0mmodel graph visualization added ✅
+Image sizes 2560 train, 2560 val
+Using 8 dataloader workers
+Logging results to [1mmodels/yolo11m-obb-bihar-to-haryana6[0m
+Starting training for 100 epochs...
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+  0%|          | 0/74 [00:00<?, ?it/s]  0%|          | 0/74 [00:08<?, ?it/s]
+Traceback (most recent call last):
+  File "/home/shardul.junagade/my-work/domain-adaptation-brick-kilns/yolo/./yolo_train.py", line 11, in <module>
+    results = model.train(
+              ^^^^^^^^^^^^
+  File "/home/shardul.junagade/.local/lib/python3.12/site-packages/ultralytics/engine/model.py", line 791, in train
+    self.trainer.train()
+  File "/home/shardul.junagade/.local/lib/python3.12/site-packages/ultralytics/engine/trainer.py", line 211, in train
+    self._do_train(world_size)
+  File "/home/shardul.junagade/.local/lib/python3.12/site-packages/ultralytics/engine/trainer.py", line 385, in _do_train
+    loss, self.loss_items = self.model(batch)
+                            ^^^^^^^^^^^^^^^^^
+  File "/home/shardul.junagade/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shardul.junagade/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shardul.junagade/.local/lib/python3.12/site-packages/ultralytics/nn/tasks.py", line 119, in forward
+    return self.loss(x, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shardul.junagade/.local/lib/python3.12/site-packages/ultralytics/nn/tasks.py", line 298, in loss
+    preds = self.forward(batch["img"]) if preds is None else preds
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shardul.junagade/.local/lib/python3.12/site-packages/ultralytics/nn/tasks.py", line 120, in forward
+    return self.predict(x, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shardul.junagade/.local/lib/python3.12/site-packages/ultralytics/nn/tasks.py", line 138, in predict
+    return self._predict_once(x, profile, visualize, embed)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shardul.junagade/.local/lib/python3.12/site-packages/ultralytics/nn/tasks.py", line 159, in _predict_once
+    x = m(x)  # run
+        ^^^^
+  File "/home/shardul.junagade/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shardul.junagade/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shardul.junagade/.local/lib/python3.12/site-packages/ultralytics/nn/modules/block.py", line 301, in forward
+    y.extend(m(y[-1]) for m in self.m)
+  File "/home/shardul.junagade/.local/lib/python3.12/site-packages/ultralytics/nn/modules/block.py", line 301, in <genexpr>
+    y.extend(m(y[-1]) for m in self.m)
+             ^^^^^^^^
+  File "/home/shardul.junagade/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shardul.junagade/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shardul.junagade/.local/lib/python3.12/site-packages/ultralytics/nn/modules/block.py", line 336, in forward
+    return self.cv3(torch.cat((self.m(self.cv1(x)), self.cv2(x)), 1))
+                               ^^^^^^^^^^^^^^^^^^^
+  File "/home/shardul.junagade/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shardul.junagade/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shardul.junagade/.local/lib/python3.12/site-packages/torch/nn/modules/container.py", line 250, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "/home/shardul.junagade/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shardul.junagade/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shardul.junagade/.local/lib/python3.12/site-packages/ultralytics/nn/modules/block.py", line 476, in forward
+    return x + self.cv2(self.cv1(x)) if self.add else self.cv2(self.cv1(x))
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shardul.junagade/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shardul.junagade/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shardul.junagade/.local/lib/python3.12/site-packages/ultralytics/nn/modules/conv.py", line 79, in forward
+    return self.act(self.bn(self.conv(x)))
+                    ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shardul.junagade/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shardul.junagade/.local/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/shardul.junagade/.local/lib/python3.12/site-packages/torch/nn/modules/batchnorm.py", line 193, in forward
+    return F.batch_norm(
+           ^^^^^^^^^^^^^
+  File "/home/shardul.junagade/.local/lib/python3.12/site-packages/torch/nn/functional.py", line 2822, in batch_norm
+    return torch.batch_norm(
+           ^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 100.00 MiB. GPU 0 has a total capacity of 79.25 GiB of which 23.38 MiB is free. Process 1218831 has 25.59 GiB memory in use. Process 3062670 has 1.72 GiB memory in use. Including non-PyTorch memory, this process has 51.88 GiB memory in use. Of the allocated memory 50.93 GiB is allocated by PyTorch, and 429.42 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
